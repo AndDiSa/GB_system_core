@@ -289,7 +289,7 @@ on boot
     import /system/etc/init.local.rc
 
     # run boot scripts 
-    exec /system/bin/sysinit.rc
+    exec /sbin/sysinit.rc
 
     class_start default
 
