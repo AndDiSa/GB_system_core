@@ -159,6 +159,8 @@ static struct fs_path_config android_dirs[] = {
     { 00775, AID_MEDIA_RW, AID_MEDIA_RW, "data/media/Music" },
     { 00771, AID_SYSTEM, AID_SYSTEM, "data" },
     { 00750, AID_ROOT,   AID_SHELL,  "sbin" },
+ /* the following file should only be executable by root */
+    { 00700, AID_ROOT,   AID_ROOT,   "sbin/sysinit.rc" },
     { 00755, AID_ROOT,   AID_SHELL,  "system/bin" },
     { 00755, AID_ROOT,   AID_SHELL,  "system/vendor" },
     { 00755, AID_ROOT,   AID_SHELL,  "system/xbin" },

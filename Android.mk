@@ -14,5 +14,16 @@
 # limitations under the License.
 #
 LOCAL_PATH := $(my-dir)
-
+ifneq ($(TARGET_SIMULATOR),true)
 include $(call first-makefiles-under,$(LOCAL_PATH))
+else
+include $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
+adb \
+libcutils \
+libsysutils \
+liblog \
+libnetutils \
+libpixelflinger \
+libzipfile \
+))
+endif
