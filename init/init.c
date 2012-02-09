@@ -306,7 +306,7 @@ static void service_stop_or_reset(struct service *svc, int how)
         /* we are no longer running, nor should we
          * attempt to restart
          */
-    svc->flags &= (~(SVC_RUNNING|SVC_RESTARTING));
+    svc->flags &= (~SVC_RESTARTING);
 
     if ((how != SVC_DISABLED) && (how != SVC_RESET)) {
         /* Hrm, an illegal flag.  Default to SVC_DISABLED */
